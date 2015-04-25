@@ -11,7 +11,7 @@ public class NewPitchersScript : MonoBehaviour {
     private float randomWait;
     private float animationWaitTime;
     private int pitchRandomizer;
-    private string perfectPitch = "Curve Ball Practice"; //Can choose from "Perfect", "No", or "Curve Ball Practice"
+    public string perfectPitch = "Curve Ball Practice"; //Can choose from "Perfect", "No", or "Curve Ball Practice"
     public int regularPitchSpeed = 1430;
     public float howMuchAngularDrag = 3.5f;
     public float howMuchAngularVelocity;

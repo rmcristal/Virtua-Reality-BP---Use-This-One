@@ -1,22 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class HitPlayer : MonoBehaviour {
 
 	public GUIText m_HelpText=null;
-
 	public GameObject m_HitPlayer=null;
-	
 	bool bEnd=true;
-
     public AudioClip hit;
+    private int swingCountRemaining = 20;
+    public Text swingsRemainingText;
 
 	// Use this for initialization
 	void Start () {
 		m_HelpText.text=m_HelpText.text.Replace("\\","\n");
-		m_HitPlayer.animation["idleReal"].wrapMode=WrapMode.Loop;
-		m_HitPlayer.animation.Play("idleReal");
+		m_HitPlayer.animation["idle"].wrapMode=WrapMode.Loop;
+		m_HitPlayer.animation.Play("idle");
+        
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,7 +26,9 @@ public class HitPlayer : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.Space)) {
 				bEnd=false;
 				StartCoroutine("PlayAni","hit");
-				return;
+                swingCountRemaining -= 1;
+                swingsRemainingText.text = ("Swings Remaining: " + swingCountRemaining);
+                return;
 			}
 			
 		}
@@ -33,7 +37,7 @@ public class HitPlayer : MonoBehaviour {
 	IEnumerator PlayAni(string name) {
 		m_HitPlayer.animation.Play(name);
 		yield return new WaitForSeconds(m_HitPlayer.animation[name].length);
-		m_HitPlayer.animation.Play("idleReal");
+		m_HitPlayer.animation.Play("idle");
 		bEnd=true;
 	}
 
