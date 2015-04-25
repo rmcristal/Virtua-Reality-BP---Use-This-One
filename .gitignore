@@ -1,0 +1,8 @@
+/Assembly-CSharp.csproj
+/Assembly-CSharp-vs.csproj
+/Library
+/*.sln
+/*.suo
+/*.userprefs
+/Temp/*
+/obj/Debug/*.cache
