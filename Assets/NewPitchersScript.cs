@@ -5,16 +5,17 @@ public class NewPitchersScript : MonoBehaviour {
 
     public Rigidbody ballPrefab;
     private Rigidbody ballClone;
-    private int pitchSpeed = 1430;
+    private int pitchSpeed = 1450;
     private GameObject other;
     private bool started = false;
     private float randomWait;
     private float animationWaitTime;
     private int pitchRandomizer;
-    public string perfectPitch = "Curve Ball Practice"; //Can choose from "Perfect", "No", or "Curve Ball Practice"
-    public int regularPitchSpeed = 1430;
+    public string perfectPitch = "Perfect"; //Can choose from "Perfect", "No", or "Curve Ball"
+    public int regularPitchSpeed = 1440;
     public float howMuchAngularDrag = 3.5f;
-    public float howMuchAngularVelocity;
+    public float howMuchAngularVelocity = 60f;
+
 
 
 
@@ -69,7 +70,7 @@ public class NewPitchersScript : MonoBehaviour {
                 }
                 else pitchSpeed = regularPitchSpeed;
             }
-            else if (perfectPitch == "Curve Ball Practice")
+            else if (perfectPitch == "Curve Ball")
             {
                 pitchSpeed = regularPitchSpeed + 50;
                 ballClone.angularDrag = howMuchAngularDrag;

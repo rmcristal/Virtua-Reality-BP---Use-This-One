@@ -31,9 +31,16 @@ public class FairAndFoulBallScript : MonoBehaviour {
 
     void OnCollisionEnter (Collision collision)
     {
-        if (thisObject.gameObject.tag != "FoulBall")
+        if (thisObject.gameObject.tag == "FoulBall")
+            Fair = "Foul";
+        else if (thisObject.gameObject.tag == "FairBall") 
             Fair = "Fair";
         Debug.Log(Fair);
+        Destroy(collision.gameObject);
+        
+
 
     }
+
+    
 }
