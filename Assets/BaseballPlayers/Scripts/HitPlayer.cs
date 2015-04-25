@@ -48,10 +48,4 @@ public class HitPlayer : MonoBehaviour {
 
     }
     
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    AudioSource.PlayClipAtPoint(hit, new Vector3(0f, 1f, -14f));
-    //    Debug.Log("There was at least a tip");
-    //}
-
 }

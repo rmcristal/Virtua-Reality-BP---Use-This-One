@@ -49,22 +49,6 @@ public class NewPitchersScript : MonoBehaviour {
     }
 
 
-
-    //IEnumerator Pitch()
-    //{
-    //    while (true)
-    //    {
-    //        yield return new WaitForSeconds(1f);
-    //        ballClone = Instantiate(ballPrefab) as Rigidbody;
-    //        ballClone.AddForce(transform.right * -pitchSpeed);
-    //        yield return new WaitForSeconds((m_PitcherPlayer.animation["shoot"].length) - (1f));
-    //        yield return new WaitForSeconds(randomWait);
-    //        Destroy(ballClone.gameObject);
-
-    //    }
-    //}
-
-
     IEnumerator PlayAni(string name)
     {
         while (true)
